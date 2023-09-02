@@ -79,7 +79,7 @@ const client = new MongoClient(uri, {
     res.send(result);
   });
 //  all project
-  app.post('/projects', verifyJWT, async (req, res) => {
+  app.post('/projects', async (req, res) => {
     const newItem = req.body;
     const result = await projectsCollection.insertOne(newItem)
     res.send(result);
